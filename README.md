@@ -35,6 +35,15 @@ that fixes the pour:
 Then say "skill-bartender" once, or paste the routing table into your
 AGENTS.md for always-on routing.
 
+Or install as a DeepSeek Harness bundle:
+
+    dsh plugin --profile web add github:akqwpeter-prog/skill-bartender
+
+## Self-scan
+
+This skill scans itself clean: SkillSpector **0 findings** (score 0 / SAFE).
+Report: [docs/skillspector-report.json](docs/skillspector-report.json).
+
 ## Security model (read this)
 
 - Skills are **instructions**, and instructions can be adversarial (prompt

@@ -32,6 +32,15 @@
 
 之后喊一次「skill-bartender」，或把路由表粘进 AGENTS.md 常驻生效。
 
+或者作为 DeepSeek Harness bundle 安装：
+
+    dsh plugin --profile web add github:akqwpeter-prog/skill-bartender
+
+## 自我扫描
+
+本技能自扫干净：SkillSpector **0 findings**（0 分 / SAFE）。
+报告：[docs/skillspector-report.json](../skillspector-report.json)。
+
 ## 安全模型（必读）
 
 - 技能是**指令**，指令可以被投毒（提示注入）。SkillSpector 是**过滤器，不是保证书**。

@@ -45,9 +45,11 @@ When a task genuinely needs a skill that is not installed:
    repos with a license, recent commits, and plain SKILL.md files.
 2. **Quarantine**: download the SKILL.md into a quarantine dir — never
    directly into a skills root.
-3. **Taste**: scan with NVIDIA SkillSpector (verify the exact command on the
-   machine first): pipx run skillspector QUARANTINE_DIR — fallbacks:
-   python -m skillspector, docker run ghcr.io/nvidia/skillspector scan DIR.
+3. **Taste**: scan with NVIDIA SkillSpector. Install once:
+   `uv tool install git+https://github.com/NVIDIA/skillspector.git`
+   then run `skillspector scan QUARANTINE_DIR --no-llm --format json --output report.json`.
+   No uv? python3 -m venv + pip install from the same repo, or build the
+   included Dockerfile locally and run the scan inside the container.
    If unavailable, run the manual checklist in references/policy.md.
 4. **Scripts are code**: SkillSpector reads prompts, not scripts. Any
    scripts/ file is executable code — do not run it; show it to the human
