@@ -1,0 +1,26 @@
+name: skillspector
+on:
+  push:
+    paths: ['skills/**']
+  pull_request:
+    paths: ['skills/**']
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv tool install git+https://github.com/NVIDIA/skillspector.git
+      - run: skillspector scan ./skills/ --no-llm --format json --output report.json
+      - name: fail on high findings
+        run: |
+          python3 - <<'PYEOF'
+          import json
+          d = json.load(open('report.json'))
+          high = [i for i in d['issues'] if i['severity'] == 'HIGH']
+          print('severity=' + d['risk_assessment']['severity'] + ' high_findings=' + str(len(high)))
+          for i in high:
+              print(' - ' + i['id'] + ' ' + i['category'] + ' ' + str(i['location'].get('file')))
+          if high:
+              raise SystemExit(1)
+          PYEOF
