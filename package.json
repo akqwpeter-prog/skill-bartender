@@ -1,6 +1,6 @@
 {
   "name": "skill-bartender",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Task-to-skill pairing with a laziness ladder and a safe install cellar. Never overpours, never serves untasted. DSH · Claude Code · Codex",
   "type": "module",
   "main": "index.js",

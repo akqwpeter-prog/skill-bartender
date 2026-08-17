@@ -1,5 +1,9 @@
 # skill-bartender 🍸
 
+[![License](https://img.shields.io/github/license/akqwpeter-prog/skill-bartender)](LICENSE)
+[![SkillSpector CI](https://github.com/akqwpeter-prog/skill-bartender/actions/workflows/scan.yml/badge.svg)](https://github.com/akqwpeter-prog/skill-bartender/actions/workflows/scan.yml)
+[![dsh-plugin](https://img.shields.io/badge/topic-dsh--plugin-2ea44f)](https://github.com/topics/dsh-plugin)
+
 **Task-to-skill pairing with a laziness ladder and a safe install cellar.**
 
 Your agent already sees a catalog of skill names and descriptions — but it
